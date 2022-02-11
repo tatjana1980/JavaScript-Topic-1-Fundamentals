@@ -37,7 +37,7 @@ function createPhoneNumber(numbers) {
     let firstpart = "";
     let secondpart = "";
     let thirdpart = "";
-    for (var i = 0; i < numbers.length; i++) {
+    for (let i = 0; i < numbers.length; i++) {
         if (i < 3) {
             firstpart += numbers[i].toString();
         } else if (i >= 3 && i < 6) {
@@ -85,7 +85,7 @@ console.log(deepCount([1, 2, [3, 4, [5]]]));
 
 function tickets(lineTickets){
   let ticket = 0;
-  for (i = 0; i < lineTickets.length; i++){
+  for (let i = 0; i < lineTickets.length; i++){
     lineTickets[i] == 25 ? ticket += lineTickets[i] : ticket -= lineTickets[i] - 25;
 }
     if (ticket < 0){
