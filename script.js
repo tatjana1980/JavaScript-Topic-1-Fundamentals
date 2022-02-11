@@ -83,21 +83,27 @@ console.log(deepCount([1, 2, [3, 4, [5]]]));
 // Line.Tickets([25, 25, 50, 50, 100]) // => NO. Vasya will not have the right bills to give 75 dollars of change (you can't make two bills of 25 from one of 50)
 
 
-function tickets(lineTickets){
+function tickets(lineTickets) {
   let ticket = 0;
-  for (let i = 0; i < lineTickets.length; i++){
-    lineTickets[i] == 25 ? ticket += lineTickets[i] : ticket -= lineTickets[i] - 25;
-}
-    if (ticket < 0){
+  for (let i = 0; i < lineTickets.length; i++) {
+    if (lineTickets[0] > 25) {
+      return "NO";
+    } else {
+      lineTickets[i] == 25 ? ticket += lineTickets[i] : ticket -= lineTickets[i] - 25;
+    }
+  }
+  if (ticket < 0) {
     return "NO";
   } else {
     return "YES";
   }
 }
 
+console.log(tickets([50, 25, 25]));
 console.log(tickets([25, 25, 50]));
 console.log(tickets([25, 100]));
 console.log(tickets([25, 25, 50, 50, 100]));
+
 
 // 6
 // Write an if condition to check that age is NOT between 14 and 90 inclusively.
